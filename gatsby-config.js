@@ -1,7 +1,9 @@
+process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND = "false"
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Gatsby Drupal v3 v9 `,
+    description: `Kick off your next, great Gatsby and Drupal project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -12,6 +14,12 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: `http://drupal-9-project-9-0-3.dd:8083`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -33,4 +41,5 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  pathPrefix: "/gatsby3_blog",
 }
